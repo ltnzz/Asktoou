@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect} from "react";
 import { NavLink } from "react-router-dom";
 import coba from "../assets/coba.png";
+import { CiSearch } from "react-icons/ci";
+import AskModal from "./AskModal";
 
 const NavBar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -17,6 +19,15 @@ const NavBar = () => {
                 window.removeEventListener('click', handleClickOutside);
             }
         })
+
+// posting
+const [showAskModal, setShowAskModal] = useState(false);
+
+const handleQuestionSubmit = (question) => {
+        console.log("Pertanyaan dikirim:", question);
+        alert("Pertanyaan dikirim: " + question);
+    };
+// posting
 
 // data-data sementara
 const user = {
@@ -48,8 +59,8 @@ const icons = {
 // data-data sementara
 
     return (
-        <nav className="w-full bg-slate-900 shadow sticky top-0 left-0 px-6 z-10 h-16 flex items-center justify-between">
-            <div className="max-w-7xl mx-auto px-4 py-3 flex items-center gap-6">
+        <nav className="w-full bg-slate-900 shadow sticky top-0 left-0 px-6 z-10 h-12 flex items-center justify-between">
+            <div className="max-w-7xl mx-auto w-full px-20 py-3 flex items-center gap-10">
                 {/* logo */}
                 <div style={{ color: "#5771ff" }} className="text-3xl font-bold pr-4">
                     <a href="/">Asktoou</a>
@@ -78,11 +89,13 @@ const icons = {
                 {/* navigation links */}
 
                 {/* search-bar */}
-                <div className="flex items-center bg-white rounded-md px-3 py-1 w-full max-w-xs">
-                    <input type="text" placeholder="Cari sesuatu di Asktoou" className="w-full outline-none text-gray-800 placeholder-gray-400 bg-transparent"/>
-                    <a href="/">
-                        <svg className="w-5 h-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M9.5 16q-2.725 0-4.612-1.888T3 9.5t1.888-4.612T9.5 3t4.613 1.888T16 9.5q0 1.1-.35 2.075T14.7 13.3l5.6 5.6q.275.275.275.7t-.275.7t-.7.275t-.7-.275l-5.6-5.6q-.75.6-1.725.95T9.5 16m0-2q1.875 0 3.188-1.312T14 9.5t-1.312-3.187T9.5 5T6.313 6.313T5 9.5t1.313 3.188T9.5 14"/></svg>
-                    </a>
+                <div className="flex items-center w-[360px] bg-white rounded-full px-4 py-1.5 gap-2 border border-transparent focus-within:border-sky-500 transition-colors duration-200">
+                    <CiSearch className="w-5 h-5 text-gray-500"/>
+                    <input 
+                    type="text" 
+                    placeholder="Cari sesuatu di Asktoou" 
+                    className="w-full text-sm outline-none text-gray-800 placeholder-gray-400 bg-transparent"
+                    />
                 </div>
                 {/* search-bar */}
 
@@ -111,10 +124,17 @@ const icons = {
                 {/* question */}
                 <button 
                 type="button"
-                className="flex items-center justify-center bg-violet-500 rounded-xl px-7 py-1.5 w-fit text-white font-bold cursor-pointer hover:bg-violet-800 transition-colors duration-300 whitespace-nowrap"
+                onClick={() => setShowAskModal(true)}
+                className="flex items-center justify-center bg-violet-500 rounded-xl px-7 py-1 w-fit text-white font-bold cursor-pointer hover:bg-violet-800 transition-colors duration-300 whitespace-nowrap"
                 >
                     Tulis Sesuatu
                 </button>
+
+                <AskModal 
+                    isOpen={showAskModal} 
+                    onClose={() => setShowAskModal(false)}
+                    onSubmit={handleQuestionSubmit}
+                />
                 {/* question */}
             </div>
         </nav>

@@ -18,15 +18,15 @@ const displayedCommunities = showAll ? communities : communities.slice(0, 5);
 
     return (
         // communitiy
-        <aside className="w-36 bg-black text-white h-screen p-2 flex flex-col ml-48 border-r-1 overflow-y-auto fixed">
+        <aside className="w-36 bg-black text-white h-screen p-2 pt-5 flex flex-col ml-24 border-r-1 overflow-y-auto fixed">
             
             {/* <h2 className="text-sm text-white font-bold mb-2 text-center border-b-1 p-2 border-white">Community</h2> */}
-            <div className="overflow-y-auto flex-0.5 text-xs text-left">
+            <div className="overflow-y-auto flex-0.5 text-sm text-left">
                 {displayedCommunities.map((com) => (
                 <a
                 key={com.id}
                     href={`/communities/${com.slug}`}
-                    className="block font-bold mb-2 p-1 hover:bg-gray-700 rounded"
+                    className="block font-bold mb-3 p-1 hover:bg-gray-700 rounded"
                 >
                     {com.icon} {com.name}
                 </a>
