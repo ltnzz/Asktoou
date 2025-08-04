@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
 import coba from "../assets/coba.png"
 import coba1 from "../public/coba1.png"
-import coba3 from "../public/coba3.jpg"
-import coba4 from "../public/coba4.jpg"
-import vid1 from "../public/vid.mp4"
 import { FaRegComment } from "react-icons/fa";
 import { VscHeart } from "react-icons/vsc";
 import { BiBarChart } from "react-icons/bi";
@@ -21,20 +18,20 @@ const user = {
     media: [
         {
             type: "image",
-            src: coba3
+            src: coba1
         },
         {
             type: "image",
-            src: coba4
+            src: coba1
         },
         {
             type: "image",
-            src: coba4
+            src: coba1
         },
-        // {
-        //     type: "video",
-        //     src: vid1
-        // },
+        {
+            type: "image",
+            src: coba1
+        },
     ]
 };
 
