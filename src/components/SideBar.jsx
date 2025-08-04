@@ -1,4 +1,5 @@
 import React, { useState }from "react";
+import { HiOutlineDotsHorizontal } from "react-icons/hi";
 
 const SideBar = () => {
     const communities = [
@@ -18,7 +19,7 @@ const displayedCommunities = showAll ? communities : communities.slice(0, 5);
 
     return (
         // communitiy
-        <aside className="w-36 bg-black text-white h-screen p-2 pt-5 flex flex-col ml-24 border-r-1 overflow-y-auto fixed">
+        <aside className="w-36 bg-[#222831] text-white h-screen p-2 pt-17 flex flex-col ml-24 border-r-1 overflow-y-auto fixed">
             
             {/* <h2 className="text-sm text-white font-bold mb-2 text-center border-b-1 p-2 border-white">Community</h2> */}
             <div className="overflow-y-auto flex-0.5 text-sm text-left">
@@ -39,11 +40,11 @@ const displayedCommunities = showAll ? communities : communities.slice(0, 5);
                 className="text-left text-xs/1 hover:text-violet-500 mt-2"
                 title={showAll ? "Show Less" : "Show More"}
                 >
-                    {showAll ? "Tampilkan lebih sedikit" : "⋯"}
+                    {showAll ? "Tampilkan lebih sedikit" : <HiOutlineDotsHorizontal />}
                 </button>
             )}
 
-            <div className="border-b-1 p-2 border-white"></div>
+            <div className="border-b-1 p-2 border-white/30"></div>
 
             <footer className="text-xs text-gray-400 mt-2 flex flex-row gap-2 flex-wrap ">
                 <a href="#" className="border-b border-transparent hover:border-gray-400 transition">About Us</a>

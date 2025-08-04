@@ -14,17 +14,19 @@ const TimeLine = () => {
     const handleOpenModal = () => setModalOpen(true);
     const handleCloseModal = () => setModalOpen(false);
 
-    const handleSubmitQuestion = (q) => {
-        setQuestions((prev) => [...prev, { id: Date.now(), text: q }]);
+    const handleSubmitQuestion = (question) => {
+        console.log("Pertanyaan dikirim:", question);
+        alert("Pertanyaan dikirim: " + question);
+        setQuestions((prev) => [...prev, { id: Date.now(), text: question }]);
     };
 
     return (
-    <div className="bg-slate-900/80 absolute left-60 p-4 space-y-6 w-[630px] h-[100px] ml-4 rounded-2xl mt-4">
+    <div className="bg-slate-900/80 absolute inset-x-0 mx-auto p-4 space-y-6 w-[520px] h-[75px] ml-64 rounded-2xl mt-17">
         <div className="flex items-center gap-4">
                 <img src={user.avatar} alt={user.name} className="w-10 h-10 rounded-full"/>
             <div
                 onClick={handleOpenModal}
-                className="cursor-pointer border px-3 py-3 p-4 w-full rounded-full text-gray-500 "
+                className="cursor-pointer border px-2.5 py-2.5 p-4 w-full rounded-full text-gray-500 text-sm"
             >
                 Ada yang ingin kamu tanyakan?
             </div>
@@ -37,9 +39,9 @@ const TimeLine = () => {
         />
 
         <div className="space-y-4">
-            {questions.map((q) => (
-            <div key={q.id} className="p-4 border rounded shadow">
-                {q.text}
+            {questions.map((question) => (
+            <div key={question.id} className="p-4 border rounded shadow">
+                {question.text}
             </div>
             ))}
         </div>

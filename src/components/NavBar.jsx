@@ -42,6 +42,7 @@ const NavLinks = [
     { name: "notification", href: "/notification", icon: "notification" },
 ]
 
+// data-data sementara
 const icons = {
     home: (
         <svg className="w-8 h-8" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M10 20v-6h4v6h5v-8h3L12 3L2 12h3v8z"/></svg>
@@ -56,13 +57,12 @@ const icons = {
         <svg className="w-8 h-8" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" fillRule="evenodd"><path d="m12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036q-.016-.004-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.016-.018m.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092q.019.005.029-.008l.004-.014l-.034-.614q-.005-.019-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01z"/><path fill="currentColor" d="M5 9a7 7 0 0 1 14 0v3.764l1.822 3.644A1.1 1.1 0 0 1 19.838 18h-3.964a4.002 4.002 0 0 1-7.748 0H4.162a1.1 1.1 0 0 1-.984-1.592L5 12.764zm5.268 9a2 2 0 0 0 3.464 0zM12 4a5 5 0 0 0-5 5v3.764a2 2 0 0 1-.211.894L5.619 16h12.763l-1.17-2.342a2 2 0 0 1-.212-.894V9a5 5 0 0 0-5-5"/></g></svg>
     )
 }
-// data-data sementara
 
     return (
-        <nav className="w-full bg-slate-900 shadow sticky top-0 left-0 px-6 z-10 h-12 flex items-center justify-between">
-            <div className="max-w-7xl mx-auto w-full px-20 py-3 flex items-center gap-10">
+        <nav className="w-full bg-slate-900 shadow fixed top-0 left-0 px-3 z-10 h-15 flex items-center justify-between">
+            <div className="max-w-7xl mx-auto w-full flex px-3 py-3 items-center gap-10 ml-22">
                 {/* logo */}
-                <div style={{ color: "#5771ff" }} className="text-3xl font-bold pr-4">
+                <div style={{ color: "#5771ff" }} className="text-3xl font-bold">
                     <a href="/">Asktoou</a>
                 </div>
                 {/* logo */}
@@ -106,14 +106,14 @@ const icons = {
                     </button>
 
                     { isOpen && (
-                        <div className="absolute left-0 mt-1.5 w-30 bg-black rounded-md shadow-lg z-50 text-sm hover:rounded-2 text-gray-700 top-11">
-                            <a href="/profile" className="block text-white px-4 py-2 hover:bg-gray-500 hover:rounded-t-md">
+                        <div className="absolute left-0 mt-1.5 w-30 bg-gray-500 rounded-md shadow-lg z-50 text-sm hover:rounded-2 text-gray-700 top-11">
+                            <a href="/profile" className="block text-white px-4 py-2 hover:bg-gray-600 hover:rounded-t-md">
                                 Profile
                             </a>
-                            <a href="/settings" className="block text-white px-4 py-2 hover:bg-gray-500">
+                            <a href="/settings" className="block text-white px-4 py-2 hover:bg-gray-600">
                                 Settings
                             </a>
-                            <button onClick={() => alert('Logout')} className="w-full text-white text-left px-4 py-2 hover:bg-gray-500 hover:rounded-b-md"> 
+                            <button onClick={() => alert('Logout')} className="w-full text-white text-left px-4 py-2 hover:bg-gray-600 hover:rounded-b-md"> 
                                 <a href="/">Logout</a>
                             </button>
                         </div>
